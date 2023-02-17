@@ -1,0 +1,168 @@
+#:import MapSource kivy_garden.mapview.MapSource
+
+MDRelativeLayout:
+	MapView:
+		lat:50.6
+		lon:3.05
+		zoom:13
+
+		# AND CREATE MARKER IN YOU MAPS
+		MapMarkerPopup:
+			lat:50.6
+			lon:3.05
+
+			# AND CREATE POPUP IN YOU MARKER
+			popup_size:dp(230),dp(130)
+			Bubble:
+				MDBoxLayout:
+					padding:"4dp"
+					MDLabel:
+						text:"YOu in here"
+						markup:True
+						halign:"center"
+
+		MapMarkerPopup:
+			lat:50.61
+			lon:3.06
+
+			# AND CREATE POPUP IN YOU MARKER
+			popup_size:dp(230),dp(130)
+			Bubble:
+				MDBoxLayout:
+					padding:"4dp"
+					MDLabel:
+						text:"YOu in here 2"
+						markup:True
+						halign:"center"
+
+	# CREATE TOOLBAR 
+	MDBoxLayout:
+		spacing:20
+		padding:10
+		orientation: 'horizontal'
+		pos_hint: {'y': 0.87}
+		MDBoxLayout:
+			radius:30
+			size_hint_x: 0.1
+			size_hint_y: 0.2
+			MDFloatingActionButton:
+				icon:"menu"
+				md_bg_color:"black"
+				icon_color:"white"
+				font_size: 40
+		MDBoxLayout:
+			size_hint_x:0.6
+		MDBoxLayout:
+			size_hint_x:0.1
+			size_hint_y:0.1
+			FitImage:
+				# ADD AVATAR IMAGE
+				source:"face.jpeg"
+				size_hint_y:1
+
+	# AND CREATE CARD IN BOTTOM 
+	MDBoxLayout:
+		size_hint_y:0.4
+		padding:[10,0,10,0]
+		MDCard:
+			elevation:40
+			radius:[30,30,0,0]
+			MDScrollView:
+				do_scroll_y:True
+				do_scroll_x:False
+				MDBoxLayout:
+					size_hint_y:1.5
+					orientation:"vertical"
+					MDBoxLayout:
+						size_hint_y:0.5
+						pos_hint:{"y":0.5}
+						MDLabel:
+							text:"Choose a car"
+							halign:"center"
+							bold:True
+
+					# CREATE SCROLL OF YOU CAR
+					MDScrollView:
+						do_scroll_y:False
+						do_scroll_x:True
+						MDBoxLayout:
+							size_hint_x:2
+							size_hint_y:1
+							MDBoxLayout:
+								padding:0,0,0,0
+								# CREATE IMAGE CAR AND TEXT
+								orientation:"vertical"
+								FitImage:
+									source:"mobil.jpeg"
+									pos_hint:{"center_x":0.5}
+								MDLabel:
+									text:"Uber X"
+									font_size:20
+									bold:True
+									halign:"center"
+							MDBoxLayout:
+								padding:0,0,0,0
+								# CREATE IMAGE CAR AND TEXT
+								orientation:"vertical"
+								FitImage:
+									source:"mobil2.jpeg"
+									pos_hint:{"center_x":0.5}
+								MDLabel:
+									text:"Uber X"
+									font_size:20
+									bold:True
+									halign:"center"
+							MDBoxLayout:
+								padding:0,0,0,0
+								# CREATE IMAGE CAR AND TEXT
+								orientation:"vertical"
+								FitImage:
+									source:"mobil6.png"
+									pos_hint:{"center_x":0.5}
+								MDLabel:
+									text:"Uber X"
+									font_size:20
+									bold:True
+									halign:"center"
+							MDBoxLayout:
+								padding:0,0,0,0
+								# CREATE IMAGE CAR AND TEXT
+								orientation:"vertical"
+								FitImage:
+									source:"mobil7.jpeg"
+									pos_hint:{"center_x":0.5}
+								MDLabel:
+									text:"Uber X"
+									font_size:20
+									bold:True
+									halign:"center"
+							
+					# CREATE NEW ROW
+					MDBoxLayout:
+						size_hint_y:0.4
+						padding:20
+						spacing:10
+
+						# CREEATE BUTTON OUTLINE
+						MDRoundFlatButton:
+							text:"Pay"
+							icon:"home"
+							size_hint_x:0.2
+						MDLabel:
+							text:"Apple Pay"
+							bold:True
+							size_hint_x:0.9
+					# CREATE BUTTON BLACK IN BOTTOM
+					MDAnchorLayout:
+						anchor_x: 'center'
+						anchor_y: 'center'
+						MDFillRoundFlatIconButton:
+							text:"Schedule UberX"
+							pos_hint:{"center_x":0.5}
+							md_bg_color:"black"
+							text_color:"white"
+							font_size:20
+							bold:True
+							icon:"home"
+							size_hint_y:0.4
+
